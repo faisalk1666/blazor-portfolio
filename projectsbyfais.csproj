@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Development npm tasks -->
+  <Target Name="NpmInstall" BeforeTargets="Build" Condition="!Exists('node_modules')">
+    <Exec Command="npm install" />
+  </Target>
+
+  <Target Name="NpmRunBuild" BeforeTargets="Build" DependsOnTargets="NpmInstall">
+    <Exec Command="npm run css:build" />
+  </Target>
+
+  <!-- Optional: Add this if you want to prevent npm tasks from running in production -->
+  <Target Name="NpmClean" BeforeTargets="Clean">
+    <RemoveDir Directories="$(MSBuildProjectDirectory)\node_modules" />
+    <Delete Files="$(MSBuildProjectDirectory)\package-lock.json" />
+  </Target>
+
+  <!-- Add any additional NuGet packages you need -->
+  <ItemGroup>
+    <!-- Example packages you might want -->
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
+  </ItemGroup>
+</Project>
