@@ -3,7 +3,7 @@
 
 <div class="min-h-screen bg-[#0a192f] text-[#8892b0] font-sans">
     <nav class="fixed w-full px-12 py-4 flex justify-between items-center bg-[#0a192f]/90 backdrop-blur z-50">
-        <div class="text-[#64ffda] font-bold text-2xl">FK</div>
+        <div class="text-[#64ffda] font-bold text-2xl">|{ }|</div>
         <div class="flex space-x-8">
             <NavLink href="#about" class="hover:text-[#64ffda] transition-colors">
                 About
@@ -19,15 +19,16 @@
 
     <div class="container mx-auto px-12 pt-32">
         <!-- Hero Section -->
-        <section class="min-h-screen">
-            <div class="space-y-4 max-w-3xl mx-auto text-center">
-                <h1 class="text-[#64ffda] font-mono">Hi, my name is</h1>
-                <h2 class="text-[#ccd6f6] text-6xl font-bold">Faisal Khan.</h2>
-                <h3 class="text-[#8892b0] text-5xl font-bold">I build things for the web.</h3>
-                <p class="text-[#8892b0] text-lg max-w-xl mt-6 mx-auto">
-                    I'm a .NET developer with over 1.5 years of experience in creating efficient, scalable, and user-friendly applications. Currently, I focus on full-stack development using modern technologies like .NET, Blazor, React, and Tailwind CSS.
-                </p>
-            </div>
+        <section class="min-h-screen flex flex-col items-center text-center">
+            <h1 class="text-[#64ffda] font-mono text-lg">Hello, I am</h1>
+            <h2 class="text-[#ccd6f6] text-6xl font-bold mt-4">Faisal Khan</h2>
+            <h3 class="text-[#8892b0] text-5xl font-semibold mt-2">A Full-Stack Developer</h3>
+            <p class="text-[#8892b0] text-lg max-w-2xl mt-6">
+                I specialize in building modern, user-centric applications using .NET, Blazor, C#, and Azure. Let’s create something amazing together.
+            </p>
+            <a href="#projects" class="mt-8 px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg shadow-lg hover:scale-105 transition-transform">
+                View My Work
+            </a>
         </section>
 
         <!-- About Section -->
@@ -39,11 +40,8 @@
                 <!-- Changed grid layout -->
                 <div class="col-span-2 space-y-4 text-lg">
                     <p>
-                        I'm passionate about building robust and user-centric digital solutions. My expertise lies in back-end development, API design, and crafting seamless front-end interfaces.
-                    </p>
-                    <p>
-                        I enjoy automating workflows, enhancing performance, and constantly learning new technologies to stay updated in this dynamic industry.<br />
-                        Here are some technologies I’ve been working with recently:
+                        I’m a .NET developer passionate about crafting high-quality web solutions. With over 1.5 years of experience, I’ve worked on diverse projects ranging from APIs to full-stack applications.
+                        Recently, I’ve been exploring front-end technologies like React and Tailwind CSS to enhance my skills.
                     </p>
                     <div class="grid grid-cols-2 gap-4 font-mono">
                         @foreach (var tech in Technologies)
@@ -109,13 +107,37 @@
             </div>
         </section>
 
+        <section id="contacts" class="min-h-screen py-24 block sm:hidden">
+            <h2 class="text-[#ccd6f6] text-3xl font-bold mb-4 text-center">
+                <span class="text-[#64ffda] font-mono">04.</span> Get In Touch
+            </h2>
+            <p class="text-lg text-[#8892b0] max-w-2xl mx-auto mb-8 text-center">
+                Have an idea or a project in mind? Let’s collaborate and create something amazing together.
+            </p>
+            <div class="flex justify-center">
+                <a href="mailto:khanfk1666@gmail.com" class="mt-4 inline-block px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    Say Hello
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mt-[5rem] flex justify-center space-x-8">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-[#64ffda] text-4xl hover:text-[#ccd6f6] transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" class="text-[#64ffda] text-4xl hover:text-[#ccd6f6] transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+
     </div>
 </div>
 
 @code {
     private List<string> Technologies = new()
     {
-        "C#", ".NET", "Blazor", "React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"
+        "C#", ".NET Core", "ASP.NET", "MVC", "SQL Server", "Node.js", "MongoDB", "Azure"
     };
 
     private List<JobExperience> Experience = new()
@@ -123,13 +145,23 @@
         new JobExperience
         {
             Title = "Software Engineer",
-            Company = "IDX",
+            Company = "IDX™",
             Period = "Feb 2023 - Present",
             Responsibilities = new[]
             {
                 "Developed and maintained client-facing applications using .NET Core and C#.",
                 "Built a Funds Windows Service to automate email attachment fetching using Microsoft Graph API and SQL Server.",
                 "Designed a Polling API for surveys using Node.js, Express, and MongoDB."
+            }
+        },
+        new JobExperience
+        {
+            Title = "Intern",
+            Company = "PMC Retail",
+            Period = "Aug 2022 - Oct 2022",
+            Responsibilities = new[]
+            {
+                "Gained foundational knowledge in Core Java, MySQL, and Object-Oriented Programming while building small-scale projects."
             }
         }
     };
