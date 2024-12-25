@@ -1,7 +1,5 @@
 # Blazor Portfolio
 
-Live Demo : https://itsmefais.azurewebsites.net/
-
 This repository contains a personal portfolio website built using [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) and styled with [Tailwind CSS](https://tailwindcss.com/). The site showcases projects and skills, providing an interactive platform to present professional information.
 
 ## Features
